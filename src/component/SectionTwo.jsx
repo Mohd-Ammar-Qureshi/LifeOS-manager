@@ -20,6 +20,7 @@ const SectionTwo = ({ tasks, setTasks, typeCount, setTypeCount }) => {
     });
 
     const newTask = {
+      id: editIndex !== null ? tasks[editIndex].id : Date.now(), // ✅ keep id
       type: inputType,
       task: inputTask,
       time: inputTime,

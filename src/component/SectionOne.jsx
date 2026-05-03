@@ -22,15 +22,8 @@ const SectionOne = ({ tasks, typeCount }) => {
             </div>
           </div>
           <div className="flex px-10 flex-wrap gap-2 h-60 overflow-y-auto no-scrollbar scroll-smooth">
-            {tasks.map((task) => (
-              <MyTasks
-                key={task.id}
-                task={tasks}
-                title={task.task}
-                type={task.type}
-                date={task.date}
-                per={"70"}
-              />
+            {tasks.map((item) => (
+              <MyTasks key={item.id} task={item} per={40} />
             ))}
           </div>
         </div>

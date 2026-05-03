@@ -9,7 +9,6 @@ const ProgressCardBox = ({ typeCount }) => {
     habitsProgres:
       "bg-gradient-to-br from-amber-500 via-orange-600 to-slate-900",
   };
-  console.log(typeCount);
 
   return (
     <div className="flex flex-1 p-2 gap-2">

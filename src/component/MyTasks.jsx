@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyTasks = ({ task, title, type, date }) => {
+const MyTasks = ({ task, per }) => {
   return (
     <div
       className="min-w-62.5 h-45 p-4 rounded-[18px] text-white relative
@@ -10,7 +10,7 @@ const MyTasks = ({ task, title, type, date }) => {
         <input type="checkbox" />
         <div className="cursor-pointer">⋮</div>
       </div>
-      <h3>{task.title}⭐</h3>
+      <div className="text-lg">{task.task}⭐</div>
       <span className="inline-block m-1 px-2 py-1 text-xs rounded-full bg-purple-500/20 text-purple-400 mb-3">
         {task.type}
       </span>
@@ -24,12 +24,12 @@ const MyTasks = ({ task, title, type, date }) => {
           <div
             className="absolute inset-0 rounded-full"
             style={{
-              background: `conic-gradient(#8b5cf6 70%, #1f2937 0%)`,
+              background: `conic-gradient(#8b5cf6 ${per}%, #1f2937 0%)`,
             }}
           ></div>
           {/* Inner circle */}
           <div className="w-9 h-9 bg-[#0b1220] rounded-full flex items-center justify-center z-10">
-            <span className="text-xs font-bold text-white">70</span>
+            <span className="text-xs font-bold text-white">{per}</span>
             {/* change in later  */}
           </div>
         </div>
