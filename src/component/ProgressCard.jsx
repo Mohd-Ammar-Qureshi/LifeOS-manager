@@ -2,7 +2,7 @@ import React from "react";
 
 const ProgressCard = (props) => {
   return (
-    <div className={`w-3xs p-1 rounded-2xl ${props.bgColor}`}>
+    <div className={`w-3xs p-1 rounded-2xl text-white ${props.bgColor}`}>
       <div className="flex gap-2 p-2 items-center">
         <img
           className="w-13 h-13 rounded-full object-cover border-2 border-gray-300 shadow"

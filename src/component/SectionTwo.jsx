@@ -55,19 +55,11 @@ const SectionTwo = ({ tasks, setTasks, typeCount, setTypeCount }) => {
     setInputDetails(tasks[index].details);
     setEditIndex(index);
   };
-  useEffect(() => {
-    const count = tasks.reduce((acc, item) => {
-      const type = item.type || "Other";
-      acc[type] = (acc[type] || 0) + 1;
-      return acc;
-    }, {});
 
-    setTypeCount(count); // ✅ send to parent
-  }, [tasks]);
   return (
     <div className="flex gap-6 w-full p-6">
       {/* LEFT - ADD TASK */}
-      <div className="w-1/3 bg-gray-900 p-6 rounded-2xl">
+      <div className="w-1/3 bg-gray-200 dark:bg-gray-900 p-6 rounded-2xl">
         <h2 className="text-xl mb-4">Add Task</h2>
 
         <div className="w-full flex gap-2 mb-4">
@@ -77,7 +69,7 @@ const SectionTwo = ({ tasks, setTasks, typeCount, setTypeCount }) => {
             value={inputType}
             onChange={(e) => setInputType(e.target.value)}
             placeholder="Select type"
-            className="w-full p-3 rounded-xl bg-gray-800 outline-none"
+            className="w-full p-3 rounded-xl bg-taupe-50 dark:bg-gray-800 outline-none"
           />
 
           <datalist id="taskTypes">
@@ -93,7 +85,7 @@ const SectionTwo = ({ tasks, setTasks, typeCount, setTypeCount }) => {
             value={inputTask}
             onChange={(e) => setInputTask(e.target.value)}
             placeholder="Enter Task..."
-            className="w-full p-3 rounded-xl bg-gray-800 outline-none"
+            className="w-full p-3 rounded-xl bg-taupe-50 dark:bg-gray-800 outline-none"
           />
         </div>
         <div className="w-full flex gap-2 mb-4">
@@ -102,7 +94,7 @@ const SectionTwo = ({ tasks, setTasks, typeCount, setTypeCount }) => {
             value={inputTime}
             onChange={(e) => setInputTime(e.target.value)}
             placeholder="Type(Deep Work,Quick, Goal, Habits...)"
-            className="w-1/2 p-3 rounded-xl bg-gray-800 outline-none"
+            className="w-1/2 p-3 rounded-xl bg-taupe-50 dark:bg-gray-800 outline-none"
           />
 
           <input
@@ -110,26 +102,26 @@ const SectionTwo = ({ tasks, setTasks, typeCount, setTypeCount }) => {
             value={InputDetails}
             onChange={(e) => setInputDetails(e.target.value)}
             placeholder="Enter Details..."
-            className="w-1/2 p-3 rounded-xl bg-gray-800 outline-none"
+            className="w-1/2 p-3 rounded-xl bg-taupe-50 dark:bg-gray-800 outline-none"
           />
         </div>
 
         <button
           onClick={handleAddTask}
-          className="w-full bg-blue-600 py-2 rounded-xl hover:bg-blue-700 transition"
+          className="w-full py-2 text-white rounded-xl bg-blue-600  hover:bg-blue-700 transition"
         >
           {editIndex !== null ? "Update Task" : "Add Task"}
         </button>
       </div>
 
       {/* RIGHT - TASK LIST */}
-      <div className="w-2/3 h-117 overflow-auto no-scrollbar bg-gray-900 p-6 rounded-2xl">
+      <div className="w-2/3 h-117 overflow-auto no-scrollbar bg-gray-200 dark:bg-gray-900 p-6 rounded-2xl">
         <h2 className="text-xl mb-4">My Tasks</h2>
         <div className="mb-4 flex gap-3 flex-wrap">
           {Object.entries(typeCount).map(([type, count]) => (
             <div
               key={type}
-              className="px-3 py-1 bg-indigo-600 rounded-full text-sm"
+              className="px-3 py-1 bg-indigo-600 text-white rounded-full text-sm"
             >
               {type} ({count})
             </div>
@@ -142,13 +134,13 @@ const SectionTwo = ({ tasks, setTasks, typeCount, setTypeCount }) => {
             {tasks.map((item, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center bg-gray-800 p-3 rounded-xl"
+                className="flex justify-between items-center bg-gray-50 dark:bg-gray-800 p-3 rounded-xl"
               >
                 {/* Task Info */}
-                <div className="bg-gray-900 text-white p-4 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 w-full max-w-md">
+                <div className="bg-gray-200 dark:bg-gray-900 p-4 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 w-full max-w-md">
                   {/* Top Row */}
                   <div className="flex items-center justify-between text-sm text-gray-400">
-                    <span className="bg-gray-800 px-2 py-1 rounded-lg">
+                    <span className="bg-gray-50 dark:bg-gray-800 px-2 py-1 rounded-lg">
                       {item.type}
                     </span>
                     <span>{item.date}</span>

@@ -2,6 +2,12 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+@custom-variant dark (&:where(.dark, .dark *));
+
 .no-scrollbar {
+  scrollbar-width: none;
+}
+* {
+  transition: all 0.2 ease;
   scrollbar-width: none;
 }

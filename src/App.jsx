@@ -6,6 +6,22 @@ function App() {
   const [active, setActive] = useState("dashboard"); //shared state
   const [tasks, setTasks] = useState([]);
   const [typeCount, setTypeCount] = useState({});
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+  useEffect(() => {
+    const count = tasks.reduce((acc, item) => {
+      const type = item.type || "Other";
+      acc[type] = (acc[type] || 0) + 1;
+      return acc;
+    }, {});
+
+    setTypeCount(count);
+  }, [tasks]); // ✅ ONLY depend on tasks
   useEffect(() => {
     const storedTasks = localStorage.getItem("tasks");
     if (storedTasks) {
@@ -16,14 +32,16 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
   return (
-    <div className="min-h-screen min-w-screen flex bg-[#0B0F1A] text-gray-100 overflow-auto">
-      <Navbox active={active} setActive={setActive} />
+    <div className="min-h-screen min-w-screen flex bg-white dark:bg-[#0B0F1A] text-black dark:text-white overflow-auto">
+      <Navbox active={active} setActive={setActive} theme={theme} />
       <Section
         active={active}
         tasks={tasks}
         setTasks={setTasks}
         typeCount={typeCount}
         setTypeCount={setTypeCount}
+        theme={theme}
+        setTheme={setTheme}
       />
     </div>
   );

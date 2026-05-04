@@ -15,14 +15,14 @@ const ProgressCardBox = ({ typeCount }) => {
       <ProgressCard
         tasksText={"Deep Work"}
         tasksCount={typeCount["Deep Work"] || 0}
-        tasksper={"40%"}
+        tasksper={30}
         tasksImg={"/src/assets/DeepWork.png"}
         bgColor={gradients.deepWork}
       />
       <ProgressCard
         tasksText={"Quick Tasks"}
         tasksCount={typeCount["Quick Task"] || 0}
-        tasksper={"40%"}
+        tasksper={40}
         tasksImg={"/src/assets/QuickTasks.jpeg"}
         bgColor={gradients.quickTasks}
       />
@@ -35,7 +35,7 @@ const ProgressCardBox = ({ typeCount }) => {
       />
       <ProgressCard
         tasksText={"Habits"}
-        tasksCount={typeCount["Habite"] || 0}
+        tasksCount={typeCount["Habit"] || 0}
         tasksImg={"/src/assets/Habits.png"}
         bgColor={gradients.habitsProgres}
         tasksper={80}

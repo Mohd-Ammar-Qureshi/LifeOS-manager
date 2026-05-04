@@ -27,7 +27,7 @@ const Navbox = ({ setActive, active }) => {
   ];
   return (
     <>
-      <div className="p-2 bg-[#0d121d] rounded-2xl flex flex-1 flex-col justify-between h-screen">
+      <div className="p-2 bg-gray-200 dark:bg-[#0d121d] rounded-2xl flex flex-1 flex-col justify-between h-screen">
         <div>
           <div className="flex items-center text-2xl font-bold p-5">
             <svg
@@ -58,7 +58,7 @@ const Navbox = ({ setActive, active }) => {
                 className={`flex items-center gap-2 m-1 rounded-xl py-2 px-5 cursor-pointer transition ${
                   active === item.id
                     ? "bg-indigo-700 text-white"
-                    : "text-gray-400 hover:bg-indigo-500 hover:text-white"
+                    : "dark:text-gray-400 hover:bg-indigo-500 hover:text-white"
                 }`}
               >
                 <Icon size={20} />
@@ -67,7 +67,7 @@ const Navbox = ({ setActive, active }) => {
             );
           })}
         </div>
-        <div>
+        <div onClick={() => setActive("settings")}>
           <div className="flex items-center py-2 px-2 gap-2">
             <div className="w-12 h-12">
               <img
@@ -83,10 +83,9 @@ const Navbox = ({ setActive, active }) => {
             <div>
               <EllipsisVertical
                 size={16}
-                color="#cccccc"
                 strokeWidth={1.25}
                 absoluteStrokeWidth
-              />{" "}
+              />
             </div>
           </div>
         </div>
