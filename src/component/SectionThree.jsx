@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import MyTasks from "./myTasks";
 const SectionThree = ({ activeTask }) => {
   const totalTime = 1500; // 25 min
   const [time, setTime] = useState(totalTime);
