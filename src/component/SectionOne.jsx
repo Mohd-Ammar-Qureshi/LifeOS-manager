@@ -1,5 +1,5 @@
 import React from "react";
-import MyTasks from "./myTasks";
+import MyTasks from "./MyTasks";
 import ProgressCardBox from "./ProgressCardBox";
 import SectionOneR from "./SectionOneR";
 import { TextAlignJustify, LayoutGrid } from "lucide-react";

@@ -5,10 +5,10 @@ import SectionTwo from "./SectionTwo";
 import SectionThree from "./SectionThree";
 import SectionFour from "./SectionFour";
 import SectionFive from "./SectionFive";
+import SectionSix from "./SectionSix";
+import SectionSeven from "./SectionSeven";
 import SectionEight from "./SectionEight";
 import SectionNine from "./SectionNine";
-import SectionSeven from "./SectionSeven";
-import SectionSix from "./SectionSix";
 
 const Section = ({
   active,
