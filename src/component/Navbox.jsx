@@ -13,7 +13,7 @@ import {
   EllipsisVertical,
 } from "lucide-react";
 
-const Navbox = ({ setActive, active }) => {
+const Navbox = ({ setActive, active, fname, lname }) => {
   const navItems = [
     { id: "dashboard", label: "Dashboard", icon: House },
     { id: "tasks", label: "Tasks", icon: CalendarCheck },
@@ -77,7 +77,9 @@ const Navbox = ({ setActive, active }) => {
               />
             </div>
             <div>
-              <p className="text-sm font-bold truncate">Mohd Ammar</p>
+              <p className="text-sm font-bold truncate">
+                {fname} {lname}
+              </p>
               <p className="text-xs text-gray-500 truncate">stay Productive!</p>
             </div>
             <div>

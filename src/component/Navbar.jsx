@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Bell, Search, Sun, Moon } from "lucide-react";
 
-const Navbar = ({ theme, setTheme }) => {
+const Navbar = ({ theme, setTheme, active, setActive }) => {
   return (
     <div className="flex w-full p-3 justify-between">
       <div className="flex-3">
@@ -52,7 +52,10 @@ const Navbar = ({ theme, setTheme }) => {
               <Moon size={20} />
             </div>
           </div>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl truncate transition">
+          <button
+            onClick={() => setActive("tasks")}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl truncate transition"
+          >
             + Add Task
           </button>
         </div>

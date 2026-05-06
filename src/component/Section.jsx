@@ -12,16 +12,29 @@ import SectionNine from "./SectionNine";
 
 const Section = ({
   active,
+  setActive,
   tasks,
   setTasks,
   typeCount,
   setTypeCount,
   theme,
   setTheme,
+  setIsLoggedIn,
+  fname,
+  setfname,
+  lname,
+  setlname,
+  email,
+  setemail,
 }) => {
   return (
     <div className="flex-6">
-      <Navbar theme={theme} setTheme={setTheme} />
+      <Navbar
+        theme={theme}
+        setTheme={setTheme}
+        active={active}
+        setActive={setActive}
+      />
 
       <div className="flex">
         {active === "dashboard" && (
@@ -42,7 +55,19 @@ const Section = ({
         {active === "analytics" && <SectionSix theme={theme} />}
         {active === "notes" && <SectionSeven theme={theme} />}
         {active === "calendar" && <SectionEight theme={theme} />}
-        {active === "settings" && <SectionNine theme={theme} />}
+        {active === "settings" && (
+          <SectionNine
+            theme={theme}
+            setTheme={setTheme}
+            setIsLoggedIn={setIsLoggedIn}
+            fname={fname}
+            setfname={setfname}
+            lname={lname}
+            setlname={setlname}
+            email={email}
+            setemail={setemail}
+          />
+        )}
       </div>
     </div>
   );
