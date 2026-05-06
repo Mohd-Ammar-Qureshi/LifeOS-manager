@@ -21,7 +21,7 @@ const SectionNine = ({
       {/* TITLE */}
       <h1 className="text-2xl font-semibold mb-6">Settings</h1>
 
-      <div className="space-y-6">
+      <div className="space-y-4">
         {/* PROFILE */}
         <div className="bg-white dark:bg-[#0B0F1A] p-5 rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.4)]">
           <h2 className="text-lg font-semibold mb-4">Profile</h2>
