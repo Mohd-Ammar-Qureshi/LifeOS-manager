@@ -11,6 +11,30 @@ function App() {
   const [lname, setlname] = useState("");
   const [email, setemail] = useState("");
 
+  useEffect(() => {
+    const fname = JSON.parse(localStorage.getItem("fname"));
+    if (fname) setfname(fname);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("fname", JSON.stringify(fname));
+  }, [fname]);
+
+  useEffect(() => {
+    const lname = JSON.parse(localStorage.getItem("lname"));
+    if (lname) setlname(lname);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("lname", JSON.stringify(lname));
+  }, [lname]);
+
+  useEffect(() => {
+    const email = JSON.parse(localStorage.getItem("email"));
+    if (email) setemail(email);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("email", JSON.stringify(email));
+  }, [email]);
+
   const [IsLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     const user = localStorage.getItem("user");
